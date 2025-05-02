@@ -8,6 +8,8 @@
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
+            text-align: center;
+            vertical-align: center;
         }
         th, td {
             padding: 5px 10px;
@@ -34,46 +36,35 @@
                     <th>중량</th>
                     <th>개수</th>
                     <th>가격</th>
-                    <th>비고</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>선물용</td>
+                    <td rowspan="2">선물용</td>
                     <td>3kg</td>
                     <td>11~16과</td>
                     <td>35,000원</td>
-                    <td></td>
                 </tr>
                 <tr>
-                    <td>선물용</td>
                     <td>5kg</td>
                     <td>18~26과</td>
                     <td>52,000원</td>
-                    <td></td>
                 </tr>
                 <tr>
-                    <td>가정용</td>
+                    <td rowspan="2">가정용</td>
                     <td>3kg</td>
                     <td>11~16과</td>
                     <td>30,000원</td>
-                    <td></td>
                 </tr>
                 <tr>
-                    <td>가정용</td>
                     <td>5kg</td>
                     <td>18~26과</td>
                     <td>47,000원</td>
-                    <td></td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <td>tfoot입니다</td>
-                    <td>tfoot입니다</td>
-                    <td>tfoot입니다</td>
-                    <td>tfoot입니다</td>
-                    <td>tfoot입니다</td>
+                    <td colspan="5">tfoot입니다</td>
                 </tr>
             </tfoot>
         </table>
