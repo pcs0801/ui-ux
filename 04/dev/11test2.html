@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0 auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        colgroup {
+            width: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <caption style="font-size: 300%; font-weight: bold; margin-bottom: 3%;">Advance HTML Table In Hindi
+            </caption>
+            <colgroup>
+                <col style="background-color: rgb(130, 130, 130, 0.3);">
+                <col>
+                <col>
+                <col>
+            <tr>
+                <th rowspan="3">Day</th>
+                <th colspan="3">Seminar</th>
+            </tr>
+            <tr>
+                <td colspan="2"><b>Shedule</b></td>
+                <td rowspan="2"><b>Topic</b></td>
+            </tr>
+            <tr>
+                <td><b>Start</b></td>
+                <td><b>End</b></td>
+            </tr>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td rowspan="2">08:00 AM</td>
+                <td rowspan="2">05:00 PM</td>
+                <td>Introduction</td>
+            </tr>
+            <tr>
+                <td>Uses</td>
+            </tr>
+            <tr>
+                <td rowspan="4">Tuesday</td>
+                <td>08:00 AM</td>
+                <td>11:00 PM</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>11:00 AM</td>
+                <td>02:00 PM</td>
+                <td>Learn</td>
+            </tr>
+            <tr>
+                <td>02:00 PM</td>
+                <td>08:00 PM</td>
+                <td rowspan="2">--</td>
+            </tr>
+            <tr>
+                <td>10:00 AM</td>
+                <td>01:00 PM</td>
+            </tr>
+            <tr>
+                <td>Wed-Fri</td>
+                <td colspan="2">Full Day</td>
+                <td>Practical</td>
+            </tr>
+            <tr>
+                <td>Sat-Sun</td>
+                <td colspan="2">11:00 AM - 05:00 PM</td>
+                <td>Extra Class</td>
+            </tr>
+            </colgroup>
+        </table>
+
+    </div>
+</body>
+
+</html>
