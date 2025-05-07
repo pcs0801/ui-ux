@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap" style="width: 80%; margin: 0 auto;">
+        <form method='get' action='#'>
+            <fieldset>
+                <legend>배송 정보</legend>
+                <ul>
+                    <li><label for="name"> 이름</label> <input type="text" name="name" placeholder="이름 입력" maxlength="5" minlength="2" id="name"><br></li>
+                    <li><label for="address">배송 주소</labe> <input type="text" name="address" placeholder="주소 입력" size="40" id="address"><br></li>
+                    <li><label for="email">이메일</label> <input type="email" name="email" placeholder="이메일 입력" id="email" required><br></li>
+                    <li><label for="phoneNumber">연락처</label> <input type="number" name="phoneNumber" placeholder="연락처 입력" id="phoneNumber" minlength="11"></li>
+                </ul>
+                <input type="submit" value="서버 전송">
+            </fieldset>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
