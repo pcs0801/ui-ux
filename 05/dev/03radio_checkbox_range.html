@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <form method='get' action='#'>
+            <fieldset>
+                <legend>취미 선택(라디오 타입)</legend>
+                <input type="radio" name="hobbyr" id="hobbyr1" value="게임"><label for="hobbyr1">게임</label>
+                <input type="radio" name="hobbyr" id="hobbyr2" value="영화"><label for="hobbyr2">영화</label>
+                <input type="radio" name="hobbyr" id="hobbyr3" value="기타"><label for="hobbyr3">기타</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>취미 선택(체크박스 타입)</legend>
+                <input type="checkbox" name="hobbycb" id="hobbycb1" value="게임"><label for="hobbycb1">게임</label>
+                <input type="checkbox" name="hobbycb" id="hobbycb2" value="영화"><label for="hobbycb2">영화</label>
+                <input type="checkbox" name="hobbycb" id="hobbycb3" value="기타"><label for="hobbycb3">기타</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>막대 바</legend>
+                <label for="#">막대바 테스트</label> <input type="range" name="range" id="range" min="0" max="100" step="10" value="50">
+            </fieldset>
+            <input type="submit" value="전송하기">
+        </form>
+    </div>
+</body>
+
+</html>
