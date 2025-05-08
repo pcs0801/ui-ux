@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        div {
+            width: 40%;
+            margin-left: 20px;
+        }
+
+        .star {
+            color: red;
+            padding-left: 5px;
+            font-weight: bold;
+        }
+
+        table,
+        td {
+            border-top: 2px solid rgb(161, 161, 161, 0.5);
+            border-collapse: collapse;
+            font-size: 12px;
+            padding: 10px 20px;
+        }
+
+        table {
+            margin-left: 18px;
+            width: 97%;
+        }
+
+        input {
+            border: 1px solid rgb(192, 192, 192);
+            padding-top: 4px;
+            padding-bottom: 4px;
+            width: 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signUp">
+        <h3 style="color: rgb(83, 83, 83); text-align: center; margin-bottom: 20px; margin-top: 20px;">회원가입</h3>
+        <span style="color: red; font-size: 20px; font-weight: bolder;">ㆍ</span><span style="font-weight: bold;">온라인
+            회원가입 작성</span>
+        <hr style="border: 1px solid rgb(162, 162, 162, 0.2); margin-top: 5px; margin-bottom: 15px;">
+        <span style="font-size: 14px; padding-left: 15px;">ㆍ고객님의 정보는 개인정보보호정책에 의해 철저하게 보호됩니다.</span>
+        <hr style="border: 1px solid rgb(162, 162, 162, 0.2); margin-top: 20px; margin-bottom: 15px;">
+        <form method='get' action='#'>
+            <table>
+                <colgroup>
+                    <col style="background-color: rgb(235, 235, 235); width: 22%;">
+                    <col style="width: 78%;">
+                </colgroup>
+                <tr>
+                    <td>사용자ID <span class="star">*</span></td>
+                    <td><input type="text" name="id" id="id" required> </td>
+                </tr>
+                <tr>
+                    <td>비밀번호 <span class="star">*</span></td>
+                    <td><input type="password" name="pw" id="pw" required>
+                        <span style="font-size: 11px;">ㆍ4~12자리의 영문,숫자,특수문자(!, @, $, %, ^, *)만 가능</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인 <span class="star">*</span></td>
+                    <td><input type="password" name="pwCheck" id="pwCheck" required></td>
+                </tr>
+                <tr>
+                    <td>성명 <span class="star">*</span></td>
+                    <td><input type="name" name="name" id="name" required>
+                        <span style="font-size: 11px;">ㆍ띄어쓰기 없이 입력, 반드시 실명이어야 합니다!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>E-mail <span class="star">*</span></td>
+                    <td><input type="email" name="email" id="email" style="width: 60%" required>
+                        <span style="font-size: 11px; font-weight: bold; padding-left: 5px;">메일 수신여부</span><br>
+                        <span style="font-size: 11px; font-weight: bold;">ㆍ할인 이벤트정보</span> 및 할인쿠폰, 관심분야등 꼭 필요한 정보를 빠르게
+                        받아보실 수 있습니다.<br>
+                        ㆍ비밀번호 분실시 E-mail로 확인해 드리니, <span
+                            style="font-size: 11px; color: rgb(0, 98, 98); font-weight: bold;">정확한 E-mail주소를 기입</span>해
+                        주세요.
+                    </td>
+                </tr>
+                <tr>
+                    <td>우편번호 <span class="star">*</span></td>
+                    <td><input type="text" name="post1" id="post1" style="width: 15%;" required><span
+                            style="padding-left: 6px; padding-right: 6px;">-</span>
+                        <input type="text" name="post2" id="post2" style="width: 15%;" required><span
+                            style="padding-left: 6px; padding-right: 6px;"></span>
+                        <button type="menu" onclick="window.alert('우편번호를 검색해주세요')"
+                            style="font-size: 12px; border: 1px solid rgb(186, 186, 186); border-radius: 3px;">우편번호
+                            검색</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>주소 <span class="star">*</span></td>
+                    <td><input type="text" name="address1" id="address1" style="width: 90%; margin-bottom: 5px;"
+                            required><br>
+                        <input type="text" name="address2" id="address2" style="width: 90%;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>휴대폰번호 <span class="star">*</span></td>
+                    <td><input type="tel" name="phone1" id="phone1" style="width: 10%;" required><span
+                            style="padding-left: 6px; padding-right: 6px;">-</span>
+                        <input type="tel" name="phone2" id="phone2" style="width: 10%;" required><span
+                            style="padding-left: 6px; padding-right: 6px;">-</span>
+                        <input type="tel" name="phone2" id="phone2" style="width: 10%;" required>
+                    </td>
+                </tr>
+            </table>
+            <div class="next" style="text-align: center; width: 100%;">
+                <button type="submit"
+                    style="width: 10%; background-color: rgb(227, 227, 227, 0.4); border: 1px solid rgb(165, 165, 165); border-radius: 3px; margin-top: 30px; margin-bottom: 50px;"
+                    value="다음">다음</button>
+            </div>
+        </form>
+    </div>
+    <div class="logIn">
+        <form method="get" action="#">
+            로그인
+            <table style="width: 70%; border-top: none; border-bottom: none; margin: 0;">
+                <tr>
+                    <td colspan="3" style="border-top: none; border-bottom: none;"> <input type="text" name="id" id="id" placeholder="아이디 or 이메일" style="width: 100%;"></td>
+                    <td rowspan="2" style="flex: 1;"><button type="submit" value="login" style="background-color: red; color: white; width: 100px; height: 80px; border-top: none; border-bottom: none;">로그인</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border-top: none; border-bottom: none;"><input type="password" name="pw" id="pw" placeholder="비밀번호" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                    <td style="border-top: none; border-bottom: none;"><input type="checkbox" name="keepLogin" id="keepLogin">로그인 상태 유지</td>
+                    <td style="border-top: none; border-bottom: none;"><input type="checkbox" name="saveId" id="saveId">아이디 저장</td>
+                    <td style="border-top: none; border-bottom: none;"></td>
+                    <td style="border-top: none; border-bottom: none;"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="border:1px solid gray;">개인정보보호를 위해 <span style="color: red;">개인 PC에서 사용해주세요.</span></button></td>
+                    <td style="border-top: none; border-bottom: none;"></td>
+                </tr>
+                <tr>
+                    <td style="border-top: none; border-bottom: none;"><button type="menu" onclick="window.alert('아이디 찾기')" style="font-size: 11px;">아이디 찾기</button></td>
+                    <td style="border-top: none; border-bottom: none;"><button type="menu" onclick="window.alert('비밀번호 찾기')" style="font-size: 11px;">비밀번호 찾기</button></td>
+                    <td style="border-top: none; border-bottom: none;"><button type="menu" onclick="window.alert('회원가입')" style="background-color: gray; color: white; font-size: 11px;">회원가입</button></td>
+                    <td style="border-top: none; border-bottom: none;"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 35%;
+        }
+
+        table,
+        col {
+            border: 1px solid rgb(185, 185, 185);
+        }
+
+        table,
+        th,
+        td {
+            padding: 5px 10px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            font-size: 10px;
+        }
+
+        th {
+            color: rgb(122, 122, 122);
+            background-color: rgb(221, 221, 221, 0.3);
+        }
+
+        body {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="requiredList">
+        <form method='get' action='#'>
+            <h2 style="margin-left: 30px; margin-bottom: -20px;">회원가입</h2><br>
+            <p style="font-size: 16px; color: orangered; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">필수 항목</p>
+            <input type="text" id="id" name="id" placeholder="아이디"
+                style="padding: 8px 10px; width: 100%; min-width: 0;"><br><br>
+            <input type="password" id="pw" name="pw" placeholder="비밀번호"
+                style="padding: 8px 10px; width: 100%; min-width: 0;"><br>
+            <input type="password" id="pwCheck" name="pwCheck" placeholder="비밀번호 확인"
+                style="padding: 8px 10px; width: 100%; min-width: 0;"><br><br>
+            <input type="text" id="name" name="name" placeholder="이름"
+                style="padding: 8px 10px; width: 100%; min-width: 0;"><br><br>
+            <input type="text" id="emailFirst" name="emailFirst" placeholder="이메일"
+                style="padding: 8px 10px; width: 35%; min-width: 0;"> @
+            <select name="email" id="email" style="padding: 8px; width: 60%; min-width: 0;">
+                <option value="" disabled selected>이메일 주소</option>
+                <option value="네이버">naver.com</option>
+                <option value="다음">daum.net</option>
+                <option value="네이트">nate.com</option>
+            </select>
+            <input type="checkbox" name="check1" id="check1" style="margin-top: 30px;"> <label for="check1"
+                style="font-weight: bold; font-size: 14px;">만 14세 이상입니다.</label><br>
+            <input type="checkbox" name="check2" id="check2" style="font-weight: bold;"> <label for="check2"
+                style="font-weight: bold; font-size: 14px;">이용약관
+                동의</label> <a href="./01Terms of Use.html" target="_blank"><img src="../images/내용보기.jpg" alt="내용보기"
+                    style="width: 35px;"></a><br>
+            <input type="checkbox" name="check3" id="check3" style="font-weight: bold;"> <label for="check3"
+                style="font-weight: bold; font-size: 14px;">개인정보 수집 및
+                이용 동의</label> <a href="./01 Personal information collection.html" target="_blank"><img
+                    src="../images/내용보기.jpg" alt="내용보기" style="width: 35px;"></a><br>
+            <table style="width: 100%; text-align: center; margin-top: 20px; margin-bottom: 40px;">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>구분</th>
+                    <th>목적</th>
+                    <th>항목</th>
+                    <th>보유 및 이용기간</th>
+                </tr>
+                <tr>
+                    <td>필수</td>
+                    <td>이용자 식별, 서비스 이행을 위한 연락</td>
+                    <td>이름, 아이디, 비밀번호, 이메일</td>
+                    <td>회원탈퇴 후 5일까지</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="selectedList">
+        <form method='get' action='#'>
+            <p style="font-size: 16px; color: gray; font-weight: bold; margin-bottom: 20px;">선택 항목</p>
+            <label for="birthYear" style="font-weight: bold; font-size: 14px; margin-right: 40px;">생년월일</label>
+            <select name="birthYear" id="birthYear" style="padding: 8px; width: 25%;">
+                <option value="" disabled selected>년도</option>
+                <option value="2000"> 2000 </option>
+                <option value="2001"> 2001 </option>
+                <option value="2002"> 2002 </option>
+            </select>
+            <select name="birthMonth" id="birthMonth" style="padding: 8px; width: 25%;">
+                <option value="" disabled selected>월</option>
+                <option value="m1"> 01 </option>
+                <option value="m2"> 02 </option>
+                <option value="m3"> 03 </option>
+            </select>
+            <select name="birthDay" id="birthDay" style="padding: 8px; width: 25%;">
+                <option value="" disabled selected>일</option>
+                <option value="d1"> 01 </option>
+                <option value="d2"> 02 </option>
+                <option value="d3"> 03 </option>
+            </select>
+            <br>
+            <span style="font-weight: bold; font-size: 14px; margin-right: 65px;">성별</span>
+            <input type="radio" name="male" id="male" style="margin-top: 20px;"><label for="male" style="font-size: 14px;"> 남자</label>
+            <input type="radio" name="female" id="female" style="margin-left: 20px;"><label for="female" style="font-size: 14px;"> 여자</label>
+            <table style="width: 100%; padding-top: 20px; margin-bottom: 20px; margin-top: 20px;">
+                <tr>
+                    <th rowspan="3" style="background-color: white;"><input type="checkbox" name="agreeAll" id="agreeAll"> <label for="agreeAll"><span style="font-size: 16px; color: black;">전체동의</span></label></th>
+                    <td><input type="checkbox" name="agreeCollect" id="agreeCollect"><label for="agreeCollect"> 생년월일과 성별 수집 및 이용 동의</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="agreeMarketing" id="agreeMarketing"><label for="agreeMarketing"> 이메일 마케팅 수신 동의</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="agreePersonalInfo" id="agreePersonalInfo"><label for="agreePersonalInfo"> 개인정보 유효기간 3년 지정 (미동의 시 1년)</label></td>
+                </tr>
+            </table>
+            <span style="font-size: 12px;"> 개인정보 수집 및 이용</span><br>
+            <table style="width: 100%; text-align: center; margin-top: 10px; margin-bottom: 40px;">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>구분</th>
+                    <th>목적</th>
+                    <th>항목</th>
+                    <th>보유 및 이용기간</th>
+                </tr>
+                <tr>
+                    <td>선택</td>
+                    <td>맞춤 정보 제공, 마케팅</td>
+                    <td>성별, 생년월일</td>
+                    <td>회원탈퇴 후 5일까지</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="signUp"style="text-align:center">
+        <button type="submit" style="height: 60px; width: 200px; margin-bottom: 10px; font-size: 20px; background-color: orangered; color: white;" onclick="window.alert('회원가입 완료')">
+            회원가입하기
+        </button>
+    </div>
+    <div class="logIn" style="width: 30%;">
+        <img src="./../images/power-button.png" alt="파워버튼" width="20px">
+        <span style="font-size: 22px; font-weight: bold; ">로그인</span>
+        <hr style="border: 1px solid rgb(205, 205, 205, 0.3); margin-bottom: 20px; margin-top: 10px;">
+        <table style="width: 100%; border: none;">
+            <tr>
+                <th style="background-color:white; width: 15%;"></th>
+                <th style="background-color: white; width: 25%;"><input type="radio" name="member" id="member"><label for="member" style="text-align: center;">회원</label></th>
+                <th style="background-color: white; width: 30%; "><input type="radio" name="nonmember" id="nonmember"><label for="nonmember" style="text-align: center;">비회원</label></th>
+                <th style="background-color: white; width: 30%;"></th>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td colspan="2"><input type="text" name = "id"  name="id" style="border-radius: 5px; border:1px solid gray; height: 30px; width: 100%;"></td>
+                <td rowspan="2"><img src="./../images/login2.png" height="60px" width="100px" onclick="window.alert('로그인 했습니다')"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td colspan="2"><input type="text" name = "id"  name="id" style="border-radius: 5px; border:1px solid gray; height: 30px; width: 100%;"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="checkbox" name="saveId" id="saveId"><label for="saveId"> 아이디 저장</label> </td>
+                <td><input type="checkbox" name="secureKeyboard" id="secureKeyboard"><label for="secureKeyboard"> 키보드 보안접속</label></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="menu" style="background-color: rgb(214, 213, 255,0.5); font-size: 12px; font-weight: bold; color: darkblue; border:1px solid gray; padding: 5px 20px;">회원가입</button></td>
+                <td><button type="menu" style="background-color: rgba(237, 237, 237, 0.1); font-size: 12px; color: rgba(42, 42, 42, 1); border:1px solid gray; padding: 5px 20px;">아이디 찾기</button></td>
+                <td><button type="menu" style="background-color: rgba(237, 237, 237, 0.1); font-size: 12px; color: rgba(42, 42, 42, 1); border:1px solid gray; padding: 5px 20px;">비밀번호 찾기</button></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>
