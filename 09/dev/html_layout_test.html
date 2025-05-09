@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .wrap {
+            width: 1000px;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .body {
+            display: flex;
+            align-content: space-between;
+            padding: 10px;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: rgb(96, 139, 255);
+            width: 98%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            height: 100px;
+        }
+
+        header>nav {
+            background-color: greenyellow;
+            width: 95%;
+            height: 60px;
+            margin: 0 auto;
+        }
+
+        main {
+            background-color: rgb(2, 211, 211);
+            width: 70%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main>header {
+            background-color: rgb(96, 139, 255);
+            width: 95%;
+            height: 50px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        main>section {
+            background-color: green;
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            align-content: space-around;
+        }
+        .artinsection {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        main>section>.artinsection > article {
+            background-color: rgb(88, 88, 200);
+            width: 45%;
+            height: 120px;
+            align-content: end;
+            margin: 0 auto;
+        }
+
+        main>section>.artinsection> article>footer {
+            background-color: blue;
+            width: 90%;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        main>article {
+            background-color: rgb(88, 88, 200);
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            align-content: space-around;
+        }
+
+        .sectionsinarticle {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        main>article>.sectionsinarticle>section {
+            width: 45%;
+            background-color: green;
+            height: 150px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        main>footer {
+            background-color: blue;
+            width: 95%;
+            height: 40px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        aside {
+            background-color: purple;
+            width: 25%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        aside>article {
+            background-color: rgb(88, 88, 200);
+            width: 95%;
+            margin: 0 auto;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        aside>section {
+            background-color: green;
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        aside>section>article {
+            background-color: rgb(88, 88, 200);
+            width: 95%;
+            margin: 0 auto;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: blue;
+            width: 98%;
+            height: 100px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        footer>nav {
+            background-color: greenyellow;
+            width: 95%;
+            height: 60px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <p>
+                &lt;header&gt;
+            </p>
+            <nav>
+                &lt;nav&gt;
+            </nav>
+        </header>
+        <div class="body">
+            <main>
+                <p>&lt;main&gt;</p>
+                <header>
+                    <p>&lt;header&gt;</p>
+                </header>
+                <section>
+                    <p>&lt;section&gt;</p>
+                    <div class="artinsection">
+                        <article>
+                            <p>&lt;article&gt;</p>
+                            <footer>
+                                <p>&lt;footer&gt;</p>
+                            </footer>
+                        </article>
+                    <article>
+                        <p>&lt;article&gt;</p>
+                        <footer>
+                            <p>&lt;footer&gt;</p>
+                        </footer>
+                    </article>
+                </div>
+        </section>
+        <article>
+            <p>&lt;article&gt;</p>
+            <div class = "sectionsinarticle">
+            <section>
+                <p>&lt;section&gt;</p>
+            </section>
+            <section>
+                <p>&lt;section&gt;</p>
+            </section>
+        </div>
+        </article>
+        <footer>
+            <p>&lt;footer&gt;</p>
+        </footer>
+        </main>
+        <aside>
+            <p>&lt;aside&gt;</p>
+            <article>
+                <p>&lt;article&gt;</p>
+            </article>
+            <section style="height: 100px;"> 
+                <p>&lt;section&gt;</p>
+            </section>
+            <section>
+                <p>&lt;section&gt;</p>
+                <article>
+                    <p>&lt;article&gt;</p>
+                </article>
+                <article>
+                    <p>&lt;article&gt;</p>
+                </article>
+            </section>
+        </aside>
+    </div>
+    <footer>
+        <p>&lt;footer&gt;</p>
+        <nav>
+            <p>&lt;nav&gt;</p>
+        </nav>
+    </footer>
+    </div>
+</body>
+
+</html>
