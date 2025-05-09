@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 200vh;
+            background-color: beige;
+            background-image: url('./../images/bg2.png');
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+        }
+        div {
+            width: 400px;
+            height: 200px;
+            border: 5px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 255, 0.2);
+            background-image: url('./../images/bg3.png');
+            background-repeat: no-repeat;
+            background-position: top right;
+        }
+
+        .bg1 {
+            background-origin: border-box;
+        }
+
+        .bg2 {
+            background-origin: content-box;
+        }
+
+        .bg3 {
+            background-origin:padding-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg1">
+        <p>보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스보더박스</p>
+    </div>
+    <div class="bg2">
+        <p>콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스콘텐트박스</p>
+    </div>
+    <div class="bg3">
+        <p>패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스패딩박스</p>
+    </div>
+</body>
+
+</html>
