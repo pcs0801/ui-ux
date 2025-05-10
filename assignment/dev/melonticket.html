@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            border: 1px dotted red;
+            height: 100vh;
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .title {
+            margin-bottom: 40px;
+        }
+
+        .tab {
+            border: 1px solid rgb(128, 128, 128, 0.3);
+            color: green;
+            height: 60px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-left: 30px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .control_list {
+            width: 100%;
+            display: flex;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            width: 70%;
+            font-size: 20px;
+            display: flex;
+            
+        }
+
+        .button>i {
+            border: 1px solid rgb(128, 128, 128, 0.3);
+            border-collapse: collapse;
+            padding:6px;
+        }
+
+        .sort {
+            width: 30%;
+            display: flex;
+            list-style-type: none;
+            justify-content: end;
+            justify-content: space-between;
+        }
+
+        .concert {
+            width: 232px;
+            border: 1px solid rgb(128, 128, 128, 0.3);
+        }
+
+        .concert > section > img {
+            width: 230px;
+            height: 325px;
+            border-bottom: 1px solid rgb(128, 128, 128, 0.3);
+        }
+
+        .concert > section > article >p {
+            padding-left :10px;
+            padding-top :10px;
+            font-weight: 500;
+        }
+
+        .date {
+            padding-left :10px;
+            padding-top :10px;
+            color: rgba(56, 56, 56, 0.9);
+        }
+        .place {
+            padding-left :10px;
+            font-size: 13px;
+            color: rgba(56, 56, 56, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="title">
+            <h2>전시/행사</h2>
+        </div>
+        <div class="tab">
+            <p>전체</p>
+        </div>
+        <div class="control_list">
+            <div class="button">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-table-list"></i>
+            </div>
+            <ul class="sort">
+                <li>인기순</li>
+                <li style="color: rgb(128, 128, 128, 0.3)">ㅣ</li>
+                <li>공연임박순</li>
+                <li style="color: rgb(128, 128, 128, 0.3)">ㅣ</li>
+                <li>최신순</li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="concert">
+            <section>
+                <img src="./../images/1.jpg" alt="1">
+                <article>
+                    <p>NCT WISH THE 1ST PHOTO EXHIBITION [ONE SUMMER WISH]</p>
+                </article>
+                <footer class="date">2025.05.15 - 2025.06.01</footer>
+                <footer class="place">ccollabohaus 한남</footer>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
