@@ -21,7 +21,6 @@
 
         .head {
             width: 100%;
-            height: 150px;
             border-bottom: 1px solid rgb(128, 128, 128, 0.5);
             margin-bottom: 30px;
             padding-top: 8px;
@@ -91,9 +90,8 @@
         .head>.head_mid {
             display: flex;
             width: 100%;
-            margin-bottom: 20px;
             align-items: start;
-            border: 1px solid red;
+            border-bottom: 1px solid rgb(128, 128, 128, 0.2);
         }
 
         .head>.head_mid>.logo {
@@ -105,7 +103,7 @@
             display: flex;
             align-items: start;
         }
-        
+
         .head>.head_mid>.search>fieldset {
             display: flex;
             border: hidden;
@@ -113,38 +111,42 @@
             padding-top: 0;
         }
 
-        .head>.head_mid>.search>fieldset>form>input {
+        .head>.head_mid>.search>fieldset>form>.search_box {
+            position: relative;
             width: 340px;
+        }
+
+        .head>.head_mid>.search>fieldset>form>.search_box>input {
+            width: 100%;
             border-radius: 20px;
             padding: 10px;
             border: 1px solid rgb(29, 184, 29);
             font-size: 0.8rem;
             font-weight: 300;
-            position: relative;
         }
 
-        .head>.head_mid>.search>fieldset>form>button {
+        .head>.head_mid>.search>fieldset>form>.search_box> button {
             border: hidden;
             background-color: white;
         }
 
-        .head>.head_mid>.search>fieldset>form>button>a>i {
+        .head>.head_mid>.search>fieldset>form>.search_box>button>a>i {
             position: absolute;
-            top: 58px;
-            left: 825px;
             font-size: 1.4rem;
             color: rgb(29, 184, 29);
+            top: 8px;
+            right: 10px;
         }
 
-        .head>.head_mid>.search>fieldset>form>button>a:hover>i {
+        .head>.head_mid>.search>fieldset>form>.search_box>button>a:hover>i {
             color: rgb(18, 155, 18);
         }
 
         .head>.head_mid>.banner {
             display: flex;
             align-items: baseline;
-            justify-content:end;
-            width: 100%;            
+            justify-content: end;
+            width: 100%;
         }
 
         .head>.head_mid>.banner>.banner_button {
@@ -152,7 +154,6 @@
             position: absolute;
             top: 85px;
         }
-
 
         #left {
             border-top-left-radius: 50%;
@@ -163,7 +164,12 @@
             font-size: 10px;
             cursor: pointer;
         }
-        #right{
+
+        #left:hover {
+            border: 2px solid black;
+        }
+
+        #right {
             font-size: 10px;
             border-top-right-radius: 50%;
             border-bottom-right-radius: 50%;
@@ -171,6 +177,47 @@
             border: 1px solid gray;
             background-color: white;
             cursor: pointer;
+        }
+
+        #right.head {
+            border: 2px solid black;
+        }
+
+        .head>.head_bottom {
+            width: 100%;
+        }
+
+        .head>.head_bottom>ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 550;
+            padding: 10px 0;
+        }
+        
+        .head>.head_bottom>ul>a:link,
+        .head>.head_bottom>ul>a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .head>.head_bottom>ul>a:hover {
+            color: rgb(29, 184, 29);
+        }
+
+        #GENRE_EXH{
+            color: rgb(29, 184, 29);
+            border-bottom: 2px solid rgb(29, 184, 29);
+        }
+
+        #myticket{
+            display: flex;
+            color: rgb(29, 184, 29);
+            align-items: center;
+            gap: 5px;
         }
 
         .title {
@@ -542,20 +589,58 @@
                 <div class="search">
                     <fieldset>
                         <form method="get" action="#">
-                            <input type="text" name="search" placeholder="서울재즈페스티벌 라인업 확인>">
-                            <button type="submit">
-                                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                            </button>
+                            <div class="search_box">
+                                <input type="text" name="search" placeholder="서울재즈페스티벌 라인업 확인>">
+                                <button type="submit">
+                                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                </button>
+                            </div>
                         </form>
                     </fieldset>
                 </div>
                 <div class="banner">
-                    <a href="#"><img src="./../images/head_banner.png"></a>
+                    <a href="https://ticket.melon.com/plan/index.htm?planId=100090"><img
+                            src="./../images/head_banner.png"></a>
                     <div class="banner_button">
-                    <button id="left">&lt;</button>
-                    <button id="right">&gt;</button>
+                        <a href="#"><button id="left">&lt;</button></a>
+                        <a href="#"><button id="right">&gt;</button></a>
+                    </div>
                 </div>
-                </div>
+            </div>
+            <div class="head_bottom">
+                <ul>
+                    <a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_CON">
+                        <li>콘서트</li>
+                    </a>
+                    <a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_ART">
+                        <li>뮤지컬/연극</li>
+                    </a>
+                    <a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_FAN">
+                        <li>팬클럽/팬미팅</li>
+                    </a>
+                    <a href="https://ticket.melon.com/concert/index.htm?genreType=GENRE_CLA">
+                        <li>클래식</li>
+                    </a>
+                    <a href="#" id="GENRE_EXH">
+                        <li>전시/행사</li>
+                    </a>
+                    <a href="https://ticket.melon.com/region/index.htm">
+                        <li>테마/지역</li>
+                    </a>
+                    <a href="https://ticket.melon.com/ranking/index.htm">
+                        <li>랭킹</li>
+                    </a>
+                    <a href="https://ticket.melon.com/csoon/index.htm#orderType=0&pageIndex=1&schGcode=GENRE_ALL&schText=&schDt=">
+                        <li>티켓오픈소식</li>
+                    </a>
+                    <a href="https://ticket.melon.com/event/index.htm?mid=1#pocGroupType=W&schType=RUNNING&pageIndex=1&pgSize=12&schText=">
+                        <li>이벤트</li>
+                    </a>
+                    <a href="https://member.melon.com/muid/family/ticket/login/web/login_inform.htm?cpId=WP15&returnPage=https%3A%2F%2Fticket.melon.com%2Fmyticket%2Findex.htm" id="myticket">
+                        <i class="fa-solid fa-user"></i>
+                        <li>마이티켓</li>
+                    </a>
+                </ul>
             </div>
         </div>
         <div class="title">
