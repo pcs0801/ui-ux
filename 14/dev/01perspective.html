@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            height: 100vh;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .origin {
+            border: 1px solid black;
+        }
+
+        .origin>div {
+            transition: 1s cubic-bezier(.9,7.56,.9,-0.1);
+        }
+
+        .rotateX:hover {
+            transform: rotateX(66deg)
+        }
+
+        .rotateY:hover {
+            transform: rotateZ(45deg)
+        }
+
+        .rotateZ:hover {
+            transform: rotate(45deg, 45deg)
+        }
+
+        .rotate3D:hover {
+            transform: rotate3d(2.5, 1.2, -1.5, 55deg);
+            
+        }
+
+        .perspect {
+            perspective: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="origin perspect">
+            <div class="rotateX">
+                <img src="./../images/teemo.jpg" alt="노을">
+            </div>
+        </div>
+        <div class="origin perspect">
+            <div class="rotateY">
+                <img src="./../images/teemo.jpg" alt="노을">
+            </div>
+        </div>
+        <div class="origin perspect">
+            <div class="rotateZ">
+                <img src="./../images/teemo.jpg" alt="노을">
+            </div>
+        </div>
+        <div class="origin perspect">
+            <div class="rotate3D">
+                <img src="./../images/teemo.jpg" alt="노을">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

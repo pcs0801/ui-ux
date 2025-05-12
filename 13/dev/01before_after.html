@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1::before {
+            content: "*****앞앞앞*****";
+            color: red;
+            margin-right:20px;
+            font-size: 2rem;
+        }
+        h1::after {
+            content: "*****뒤뒤뒤*****";
+            color: red;
+            margin-left: 20px;
+            font-size: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS 가상요소</h1>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, ducimus.</P>
+    </div>
+</body>
+</html>
