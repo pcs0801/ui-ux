@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 80px;
+        }
+
+        #name, #id, #pw {
+            outline: none;
+            border: none;
+            border-bottom: 3px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <form method='post' action='insert.jsp'>
+        <fieldset>
+            <legend>
+                개인정보입력
+            </legend>
+            <label for = "name">이름 : </label><input type='text' name='name' id="name" placeholder='이름 입력'>
+            <span id="nameMsg">이름 입력하세요</span><br>
+            <label for = "id">아이디 : </label><input type='text' name='id' id="id"placeholder='아이디 입력' onblur="ㅋㅋ" ><br>
+            <label for = "pw">비밀번호 : </label><input type='password' name='pw' id="pw" placeholder='비밀번호 입력'>
+        </fieldset>
+        <input type="submit" value="제출">
+        <input type='reset' value='초기화'>
+    </form>
+
+    <script>
+        let name = document.querySelector("#name");
+        let nameMsg = document.querySelector("#nameMsg");
+        name.onfocus = event=> nameMsg.innerHTML = "최대 4글자까지 입력 가능합니다.";
+        name.onblur = event=> {if(name.value.length > 4) {
+            nameMsg.innerHTML = "입력한 값이 4글자를 초과하였습니다."
+            name.value = '';
+        } else if(name.value.length < 1) {
+            nameMsg.innerHTML = "입력한 값이 1글자 미만입니다."
+            name.value = '';
+        } else {
+            nameMsg.innerHTML = "값이 제대로 입력 되었습니다."
+        }
+        };
+        
+    </script>
+</body>
+</html>
