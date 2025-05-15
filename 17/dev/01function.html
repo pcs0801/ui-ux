@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트 즉시 실행 함수</h1>
+
+    <script>
+        let h1obj = document.querySelector('h1');
+
+        let sum = function() {
+            return 100 + 10000;
+        }
+
+        (function(a, b) {
+            document.write(`10+20 = ${a+b}`);
+        }(10,30));
+
+        let result = sum;
+        h1obj.innerText = `result = ${result()}`;
+        document.write(`result = ${result()}`);
+    </script>
+</body>
+</html>
