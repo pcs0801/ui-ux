@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            height: 300px;
+            margin: 30px auto;
+            border: 3px dotted red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-image: url(./../../14/images/teemo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="startBtn">타임아웃 시작</button>
+        <button id="stopBtn">타임아웃 종료</button>
+    </div>
+
+    <script>
+        let startBtn = document.querySelector("#startBtn");
+        let stopBtn = document.querySelector("#stopBtn");
+
+        startBtn.addEventListener("click", startFunc, false);
+        stopBtn.addEventListener("click", stopFunc, false);
+
+        function startFunc() {
+            timeId = setInterval(() => {
+                console.log('알람ON')
+            }, 3000);
+        }
+
+        function stopFunc() {
+            console.log('알람OFF');
+            clearTimeout(timeId);
+        }
+    </script>
+</body>
+
+</html>

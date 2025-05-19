@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 1120px;
+            margin: 0 auto;
+            border: 1px solid blue;
+            padding: 10px;
+        }
+
+        .result {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding-inline-start: 0;
+            gap: 10px;
+        }
+
+        li>button {
+            width: 100px;
+            padding: 5px 10px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li><button id="btnobj1">Red</button></li>
+            <li><button id="btnobj2">Green</button></li>
+            <li><button id="btnobj3">Yellow</button></li>
+            <li><button id="popupClose">창 닫기</button></li>
+        </ul>
+        <div class="result">
+        </div>
+    </div>
+
+    <script>
+        let btnList = document.querySelectorAll("button");
+        // let btnobj1 = document.querySelector("#btnobj1");
+        // let btnobj2 = document.querySelector("#btnobj2");
+        // let btnobj3 = document.querySelector("#btnobj3");
+        let result = document.querySelector(".result");
+        let popupClose = document.querySelector("#popupClose");
+
+        // btnobj1.onclick = e => {
+        //     let colorText = btnobj1.innerHTML;
+        //     result.style.backgroundColor = colorText;
+        // }
+        // btnobj2.onclick = e => {
+        //     let colorText = btnobj2.innerHTML;
+        //     result.style.backgroundColor = colorText;
+        // }
+        // btnobj3.onclick = e => {
+        //     let colorText = btnobj3.innerHTML;
+        //     result.style.backgroundColor = colorText;
+        // }
+
+        
+        for (let i = 0; i < btnList.length; i++) {
+            btnList[i].onclick = e => {
+                let colorText = btnList[i].innerHTML;
+                result.style.backgroundColor = colorText;
+            };
+        }
+        
+        popupClose.onclick = function (e) {
+            window.close();
+        }
+    </script>
+</body>
+
+</html>

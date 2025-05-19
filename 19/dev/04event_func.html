@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 1120px;
+            margin: 0 auto;
+            border: 3px solid red;
+        }
+
+        .content {
+            width: 60%;
+            margin: 0 auto;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .img-main {
+            width: 80%;
+        }
+
+        .content-img {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            border: 1px solid black;
+        }
+
+        .img-sub {
+            width: 33%;
+        }
+
+        .img-sub:hover {
+            border: 2px solid red;
+            cursor: grab;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="content">
+            <img src="./../images/coffee-blue.jpg" alt="블루커피" id="img-main" onmouseover="changeImg()"
+                onmouseleave="originalImg()">
+            <div class="content-img">
+                <img src="./../images/coffee-blue.jpg" alt="블루커피" class="img-sub">
+                <img src="./../images/coffee-gray.jpg" alt="그레이커피" class="img-sub">
+                <img src="./../images/coffee-pink.jpg" alt="핑크커피" class="img-sub">
+            </div>
+        </div>
+    </div>
+    <script>
+        let imgMain = document.querySelector("#img-main");
+
+        imgMain.addEventListener(mouseover, () => {
+            imgMain.src = "./../images/coffee-gray.jpg";
+        }, false);
+        
+        imgMain.addEventListener(mouseleave, () => {
+            imgMain.src = "./../images/coffee-blue.jpg";
+        }, false);
+
+    </script>
+</body>
+
+</html>
