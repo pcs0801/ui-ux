@@ -12,6 +12,31 @@
             padding: 0;
         }
 
+        body {
+            width: 1000px;
+            border: 2px solid red;
+            height: 100vh;
+            margin: 0 auto;
+        }
+
+        .menu {
+            width: 100%;
+            display: flex;
+            border: 1px solid green;
+            margin-bottom: 10px;
+            height: 100px;
+            background-color: rgb(250, 246, 195);
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .menu>.menu_left {
+            border: 1px dotted green;
+            width: 20%;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
         a {
             text-decoration: none;
             color: black;
@@ -21,15 +46,15 @@
             list-style: none;
         }
 
-        ul.menu {
+        ul.tab {
             display: flex;
             justify-content: center;
             align-items: center;
             list-style: none;
-            background-color: beige;
+            border: 1px dotted green;
         }
 
-        ul.menu > li > a {
+        ul.tab>li>a {
             display: inline-block;
             padding: 10px;
             width: 100px;
@@ -37,13 +62,14 @@
             text-align: center;
         }
 
-        ul.menu > li > a:hover {
+        ul.tab>li>a:hover {
             background-color: aquamarine;
         }
 
-        ul.menu > li.dropdown:hover > ul.dropdown-content {
+        ul.tab>li.dropdown:hover>ul.dropdown-content {
             display: flex;
             flex-direction: column;
+            background-color: white;
         }
 
         ul.dropdown-content {
@@ -63,23 +89,184 @@
             background-color: blueviolet;
         }
 
+        .menu>.menu_right {
+            border: 1px dotted green;
+            width: 20%;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .banner {
+            display: flex;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+
+        .banner > img {
+            border-radius: 50px;
+        }
+
+        .nav_info_aside {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid black;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .nav_info_aside>nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+            height: 500px;
+            background-color: rgb(211, 236, 164);
+            border: 1px solid orange;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .nav_info_aside>.info {
+            width: 50%;
+            border: 1px solid orange;
+        }
+
+        .nav_info_aside>aside {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+            height: 500px;
+            background-color: rgb(211, 236, 164);
+            border: 1px solid orange;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            background-color: rgb(255, 235, 167);
+            height: 60px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
     </style>
 </head>
 
 <body>
-    <ul class="menu">
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">home</a>
-            <ul class="dropdown-content">
-                <li><a href="">sub</a></li>
-                <li><a href="">sub</a></li>
-                <li><a href="">sub</a></li>
-            </ul>
-        </li>
-    </ul>
+    <div class="menu">
+        <div class="menu_left">
+            <span>MIRE PHOTO</span>
+        </div>
+        <ul class="tab">
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li><a href="#">menu</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">menu</a>
+                <ul class="dropdown-content">
+                    <li><a href="">sub</a></li>
+                    <li><a href="">sub</a></li>
+                    <li><a href="">sub</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="menu_right">
+            <span>facebook, twitter</span>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="./../images/pic1.jpg" alt="pic1">
+        <img src="./../images/pic2.jpg" alt="pic1">
+        <img src="./../images/pic3.jpg" alt="pic1">
+        <img src="./../images/pic4.png" alt="pic1">
+    </div>
+
+    <div class="nav_info_aside">
+
+        <nav>
+            <span>NAV</span>
+        </nav>
+
+        <div class="info">
+            <form>
+                <div class="name">
+                    <label for="name">이름</label><br>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="id">
+                    <label for="id">아이디</label><br>
+                    <input type="text" id="id" name="id">
+                </div>
+
+                <div class="pw">
+                    <label for="pw">비밀번호</label><br>
+                    <input type="password" id="pw" name="pw">
+                </div>
+
+                <div class="pwCheck">
+                    <label for="pw2">비밀번호 재확인</label><br>
+                    <input type="password" id="pw2" name="pw2">
+                </div>
+
+                <div class="birthDay">
+                    <label>생년월일</label><br>
+                    <select name="birthYear">
+                        <option value="">년도</option>
+                        <option>2000</option>
+                        <option>2001</option>
+                        <option>2002</option>
+                    </select>
+                    <select name="birthMonth">
+                        <option value="">월</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                    </select>
+                    <select name="birthDay">
+                        <option value="">일</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                    </select>
+                </div>
+
+                <div class="gender">
+                    <label>성별</label><br>
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">남</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">여</label>
+                </div>
+                <div class="email">
+                    <label for="email">본인확인 이메일</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@example.com">
+                </div>
+
+                <div class="phone">
+                    <label for="phone">휴대전화</label><br>
+                    <input type="text" id="phone" name="phone" placeholder="010-1234-5678">
+                </div>
+
+
+                <div class="signUp" style="margin-top: 10px;">
+                    <button type="submit">가입하기</button>
+                </div>
+        </div>
+        <aside>
+            <span>ASIDE</span>
+        </aside>
+    </div>
+
+    <footer><span>FOOTER</span>
+    </footer>
 </body>
 
 </html>
