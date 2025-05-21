@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MIRE PICTURE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -22,19 +25,19 @@
         .menu {
             width: 100%;
             display: flex;
-            border: 1px solid green;
+            border: 1px solid rgb(128, 128, 128, 0.3);
             margin-bottom: 10px;
             height: 100px;
             background-color: rgb(250, 246, 195);
             justify-content: space-around;
             align-items: center;
+            z-index: 2;
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         .menu>.menu_left {
-            border: 1px dotted green;
             width: 20%;
-            font-size: 1.2rem;
-            font-weight: 700;
         }
 
         a {
@@ -51,14 +54,12 @@
             justify-content: center;
             align-items: center;
             list-style: none;
-            border: 1px dotted green;
         }
 
         ul.tab>li>a {
             display: inline-block;
             padding: 10px;
             width: 100px;
-            border: 1px solid black;
             text-align: center;
         }
 
@@ -75,13 +76,13 @@
         ul.dropdown-content {
             position: absolute;
             display: none;
+            z-index: 3;
         }
 
         ul.dropdown-content a {
             display: block;
             padding: 10px;
             width: 100px;
-            border: 1px solid black;
             text-align: center;
         }
 
@@ -90,27 +91,86 @@
         }
 
         .menu>.menu_right {
-            border: 1px dotted green;
+            display: flex;
             width: 20%;
-            font-size: 1rem;
-            font-weight: 700;
+            gap: 30px;
+            justify-content: end;
         }
+
 
         .banner {
             display: flex;
+            width: 1000px;
             height: 300px;
             margin-bottom: 10px;
+            z-index: 1;
+            object-fit: cover;
+            position: relative;
         }
 
-        .banner > img {
+        img {
             border-radius: 50px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
         }
+
+        #navgateleft {
+            position: absolute;
+            bottom: 50%;
+            left: 10%;
+            transform: translate(-50%, 50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgba(128, 128, 128);
+            z-index: 1;
+        }
+
+        #navgateright {
+            position: absolute;
+            bottom: 50%;
+            right: 10%;
+            transform: translate(50%, 50%);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgba(128, 128, 128);
+            z-index: 1;
+        }
+
+        #navgateleft:hover,
+        #navgateright:hover {
+            color: rgb(240, 248, 255);
+            cursor: pointer;
+        }
+
+        #indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            z-index: 1;
+        }
+
+        #indicator i {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        #indicator i:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        .active {
+            color: rgb(249, 150, 28);
+        }
+
 
         .nav_info_aside {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            border: 1px solid black;
+            align-items: stretch;
+            border: 1px solid rgb(128, 128, 128, 0.3);
             width: 100%;
             margin-bottom: 10px;
         }
@@ -120,16 +180,33 @@
             justify-content: center;
             align-items: center;
             width: 20%;
-            height: 500px;
             background-color: rgb(211, 236, 164);
-            border: 1px solid orange;
+            border: 1px solid rgb(128, 128, 128, 0.3);
             font-weight: 700;
             font-size: 1rem;
         }
 
-        .nav_info_aside>.info {
+        .nav_info_aside>.info_wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 50%;
-            border: 1px solid orange;
+            background-color: rgb(211, 236, 164);
+            border: 1px solid rgb(128, 128, 128, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .nav_info_aside>.info_wrap>span {
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 15px;
+        }
+
+        .nav_info_aside>.info_wrap>.info {
+            width: 95%;
+            background-color: rgb(238, 238, 238);
+            padding: 10px;
         }
 
         .nav_info_aside>aside {
@@ -137,31 +214,86 @@
             justify-content: center;
             align-items: center;
             width: 20%;
-            height: 500px;
             background-color: rgb(211, 236, 164);
-            border: 1px solid orange;
             font-weight: 700;
             font-size: 1rem;
+            border: 1px solid rgb(128, 128, 128, 0.3);
         }
-
 
         footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid black;
+            border: 1px solid rgb(128, 128, 128, 0.3);
             background-color: rgb(255, 235, 167);
             height: 60px;
             font-size: 1rem;
             font-weight: 700;
         }
+
+        label {
+            display: inline-block;
+        }
+
+        input,
+        select {
+            border: none;
+            height: 30px;
+            padding-left: 10px;
+            margin-bottom: 5px;
+
+        }
+
+        .w-70 {
+            width: 70%;
+        }
+
+        .w-31 {
+            width: 31%;
+        }
+
+        .w-95 {
+            width: 95%;
+        }
+
+        .w-25 {
+            width: 25%;
+        }
+
+        .grayText {
+            color: gray;
+            font-size: 0.9rem;
+        }
+
+        .vcBtn {
+            width: 24%;
+            height: 30px;
+            background-color: rgb(22, 187, 22);
+            color: white;
+            border: 1px solid green;
+            font-size: 0.7rem;
+        }
+
+        .suBtn {
+            width: 95%;
+            height: 30px;
+            background-color: rgb(22, 187, 22);
+            color: white;
+            border: 1px solid green;
+            font-size: 0.7rem;
+        }
+
+        #vc {
+            background-color: rgb(238, 238, 238);
+            border: 2px dotted rgba(71, 71, 71, 0.3);
+        }
     </style>
 </head>
 
-<body>
+<body onload="onLoad()">
     <div class="menu">
         <div class="menu_left">
-            <span>MIRE PHOTO</span>
+            <a href="#"><span> <i class="fa-solid fa-camera-retro"></i> MIRE PHOTO</span></a>
         </div>
         <ul class="tab">
             <li><a href="#">menu</a></li>
@@ -177,15 +309,26 @@
             </li>
         </ul>
         <div class="menu_right">
-            <span>facebook, twitter</span>
+            <a href="#"><span><i class="fa-brands fa-facebook"></i></span></a>
+            <a href="#"><span><i class="fa-brands fa-twitter"></i></span></a>
         </div>
     </div>
 
-    <div class="banner">
-        <img src="./../images/pic1.jpg" alt="pic1">
-        <img src="./../images/pic2.jpg" alt="pic1">
-        <img src="./../images/pic3.jpg" alt="pic1">
-        <img src="./../images/pic4.png" alt="pic1">
+    <div class="banner" id="all">
+        <div class="slide_show">
+            <a href="#"><img src="./../images/pic1.jpg" alt="pic1" class="slide"></a>
+            <a href="#"><img src="./../images/pic2.jpg" alt="pic1" class="slide"></a>
+            <a href="#"><img src="./../images/pic3.jpg" alt="pic1" class="slide"></a>
+            <a href="#"><img src="./../images/pic4.png" alt="pic1" class="slide"></a>
+        </div>
+        <i class="fa-solid fa-circle-chevron-left" id="navgateleft"></i>
+        <i class="fa-solid fa-circle-chevron-right" id="navgateright"></i>
+        <div id="indicator">
+            <a href="" class="active"><i class="fa-solid fa-circle-dot"></i></a>
+            <a href=""><i class="fa-solid fa-circle-dot"></i></a>
+            <a href=""><i class="fa-solid fa-circle-dot"></i></a>
+            <a href=""><i class="fa-solid fa-circle-dot"></i></a>
+        </div>
     </div>
 
     <div class="nav_info_aside">
@@ -193,72 +336,91 @@
         <nav>
             <span>NAV</span>
         </nav>
+        <div class="info_wrap">
+            <span>MIRE PICTURE</span>
+            <div class="info">
+                <form>
+                    <div class="id">
+                        <label for="id1">아이디</label><br>
+                        <input type="text" id="id1" name="id1" class="w-70">
+                        <span class="msg"></span>
+                        <input type="text" id="id2" name="id2" class="w-25" placeholder="@naver.com">
+                    </div>
 
-        <div class="info">
-            <form>
-                <div class="name">
-                    <label for="name">이름</label><br>
-                    <input type="text" id="name" name="name">
-                </div>
+                    <div class="pw">
+                        <label for="pw">비밀번호</label><br>
+                        <input type="password" id="pw" name="pw" class="w-95">
+                        <span class="msg"></span>
+                    </div>
 
-                <div class="id">
-                    <label for="id">아이디</label><br>
-                    <input type="text" id="id" name="id">
-                </div>
+                    <div class="pwCheck">
+                        <label for="pw2">비밀번호 재확인</label><br>
+                        <input type="password" id="pw2" name="pw2" class="w-95">
+                        <span class="msg"></span>
+                    </div>
 
-                <div class="pw">
-                    <label for="pw">비밀번호</label><br>
-                    <input type="password" id="pw" name="pw">
-                </div>
+                    <div class="name">
+                        <label for="name">이름</label><br>
+                        <input type="text" id="name" name="name" class="w-95">
+                        <span class="msg"></span>
+                    </div>
 
-                <div class="pwCheck">
-                    <label for="pw2">비밀번호 재확인</label><br>
-                    <input type="password" id="pw2" name="pw2">
-                </div>
+                    <div class="birthDay">
+                        <label>생년월일</label><br>
+                        <input type="number" id="birthYear" name="birthYear" class="w-31" placeholder="년(4자)">
+                        <select name="birthMonth" class="w-31">
+                            <option value="">월</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                        <input type="number" id="birthDay" name="birthDay" class="w-31" placeholder="일">
+                    </div>
 
-                <div class="birthDay">
-                    <label>생년월일</label><br>
-                    <select name="birthYear">
-                        <option value="">년도</option>
-                        <option>2000</option>
-                        <option>2001</option>
-                        <option>2002</option>
-                    </select>
-                    <select name="birthMonth">
-                        <option value="">월</option>
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                    </select>
-                    <select name="birthDay">
-                        <option value="">일</option>
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                    </select>
-                </div>
+                    <div class="gender">
+                        <label>성별</label><br>
+                        <select name="gender" class="w-95">
+                            <option value="">성별</option>
+                            <option>남</option>
+                            <option>여</option>
+                        </select>
+                    </div>
+                    <div class="email">
+                        <label for="email">본인확인 이메일<span class="grayText"> (선택)</span></label><br>
+                        <input type="email" id="email" name="email" placeholder="선택입력" class="w-95">
+                        <span class="msg"></span>
+                    </div>
 
-                <div class="gender">
-                    <label>성별</label><br>
-                    <input type="radio" name="gender" id="male">
-                    <label for="male">남</label>
-                    <input type="radio" name="gender" id="female">
-                    <label for="female">여</label>
-                </div>
-                <div class="email">
-                    <label for="email">본인확인 이메일</label><br>
-                    <input type="email" id="email" name="email" placeholder="example@example.com">
-                </div>
+                    <div class="phone">
+                        <label for="phone">휴대전화</label><br>
+                        <select name="phone1" class="w-95">
+                            <option value="">대한민국 +82</option>
+                            <option>미국 +1</option>
+                            <option>영국 +44</option>
+                            <option>호주 +61</option>
+                            <option>일본 +81</option>
+                            <option>중국 +86</option>
+                            <option>태국 +66</option>
+                            <input type="text" id="phone" name="phone" placeholder="전화번호 입력" class="w-70">
+                            <span class="msg"></span>
+                            <button type="button" class="vcBtn">인증번호 받기</button>
+                    </div>
 
-                <div class="phone">
-                    <label for="phone">휴대전화</label><br>
-                    <input type="text" id="phone" name="phone" placeholder="010-1234-5678">
-                </div>
+                    <input type="number" id="vc" name="vc" placeholder="인증번호를 입력하세요" class="w-95">
 
-
-                <div class="signUp" style="margin-top: 10px;">
-                    <button type="submit">가입하기</button>
-                </div>
+                    <div class="signUp" style="margin-top: 10px;">
+                        <button type="submit" class="suBtn">가입하기</button>
+                    </div>
+            </div>
         </div>
         <aside>
             <span>ASIDE</span>
@@ -267,6 +429,164 @@
 
     <footer><span>FOOTER</span>
     </footer>
+
+    <script>
+
+        /* 회전목마 */
+        const slideObj = document.querySelectorAll('.slide');
+        const navLeft = document.querySelector('#navgateleft');
+        const navRight = document.querySelector('#navgateright');
+        const indicateA = document.querySelectorAll(`#indicator>a`);
+        let list = [1, 0, 0, 0];
+        function listArray() {
+            for (let i = 0; i < list.length; i++) {
+                slideObj[i].style.zIndex = list[i];
+            }
+            for (let i = 0; i < indicateA.length; i++) {
+                indicateA[i].classList.remove('active');
+            }
+            indicateA[list.indexOf(1)].classList.add('active');
+        }
+        listArray();
+        navLeft.addEventListener('click', () => {
+            list.push(list.shift());
+            listArray();
+        });
+        function moveRight() {
+            list.unshift(list.pop());
+            listArray();
+        }
+        navRight.addEventListener('click', moveRight);
+
+        function startTimer() {
+            timerID = setInterval(moveRight, 3000);
+        }
+        startTimer();
+
+        all.addEventListener('mouseenter', () => {
+            clearInterval(timerID);
+        });
+        all.addEventListener('mouseleave', () => {
+            startTimer();
+        });
+
+        for (let i = 0; i < indicateA.length; i++) {
+            indicateA[i].addEventListener('click', () => {
+                list = [0, 0, 0, 0];
+                list[i] = 1;
+                listArray();
+            });
+        }
+
+        /* 패턴검색 */
+        //전체 document 메모리 모두 로드가 되었을때 onLoad() 함수 call
+function onLoad() {
+  //id 패턴검색을 진행할 이벤트 정의
+  let idPattern = /^[\w]{3,12}$/;
+  let pwPattern = /^[\w]{6,8}$/;
+  let pwCheckPattern = /^[\w]{6,8}$/;
+  let namePattern = /^[가-힣]{2,4}$|^[a-zA-Z]{4,11}$/;
+  let nicknamePattern = /^[가-힣0-9a-zA-Z]{2,4}$|^[가-힣0-9a-zA-Z]{4,11}$/;
+  let emailPattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+  let phoneNumPattern = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/;
+  let birthdayPattern = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+
+  let id = document.querySelector("#id1");
+  let pw = document.querySelector("#pw");
+  let pwCheck = document.querySelector("#pwCheck");
+  let submit = document.querySelector("#submit");
+  let name = document.querySelector("#name");
+  let nickname = document.querySelector("#nickname");
+  let email = document.querySelector("#email");
+  let phoneNum = document.querySelector("#phoneNum");
+  let birthday = document.querySelector("#birthday");
+  let addrSearch = document.querySelector("#addrSearch");
+  let zipcode = document.querySelector("#zipcode");
+  let addr1 = document.querySelector("#addr1");
+
+  id.addEventListener("blur", () => {
+    validate(id, idPattern, "영문자, 숫자, _만 입력 가능. 최소 3자이상 12자이하 입력하세요.");
+  });
+
+  pw.addEventListener("blur", () => {
+    validate(pw, pwPattern, "영문자, 숫자, _만 입력 가능. 최소 6자이상 8자이하 입력하세요.");
+  });
+
+  name.addEventListener("blur", () => {
+    validate(name, namePattern, "공백없이 한글, 영문만 입력 가능 (한글2자, 영문4자 이상)");
+  });
+
+  nickname.addEventListener("blur", () => {
+    validate(nickname, nicknamePattern, "공백없이 한글, 영문, 숫자만 입력 가능 (한글2자, 영문4자 이상) 최대 11자");
+  });
+
+  email.addEventListener("blur", () => {
+    validate(email, emailPattern, "특수문자 최대 1개 포함, @ 필수 입력, 대소문자 구분없음.");
+  });
+  
+  phoneNum.addEventListener("blur", () => {
+  validate(phoneNum, phoneNumPattern, "'-' 제외, 숫자만 입력.");
+  });
+  
+  birthday.addEventListener("blur", () => {
+  validate(birthday, birthdayPattern, "숫자 8자리로 입력(ex. 19900101)");
+  });
+
+  pwCheck.addEventListener("blur", () => {
+    if (pw.value === pwCheck.value) {
+      pwCheck.nextSibling.innerHTML = "패스워드 일치";
+      pw.nextSibling.innerHTML = "";
+      pwCheck.nextSibling.style.color = "blue";
+    } else {
+      pwCheck.nextSibling.innerHTML = "패스워드 불일치";
+      pwCheck.nextSibling.style.color = "tomato";
+      pwCheck.value = "";
+      pwCheck.focus();
+    }
+  });
+
+
+  //회원가입전송기능 점검
+  submit.addEventListener("click", function () {
+    //아이디
+    let idReturn = validate(id, idPattern, "값을 정확하게 입력요청");
+    if (idReturn === false) return;
+    let pwReturn = validate(pw, pwPattern, "값을 정확하게 입력요청");
+    if (pwReturn === false) return;
+    let pwCheckReturn = validate(pw, pwPattern, "값을 정확하게 입력요청");
+    if (pwCheckReturn === false) return;
+    let nameReturn = validate(name, namePattern, "값을 정확하게 입력요청");
+    if (nameReturn === false) return;
+    let emailReturn = validate(email, emailPattern, "값을 정확하게 입력요청");
+    if (emailReturn === false) return;
+    let phoneNumReturn = validate(phoneNum, phoneNumPattern, "값을 정확하게 입력요청");
+    if (phoneNumReturn === false) return;
+    let birthdayReturn = validate(birthday, birthdayPattern, "값을 정확하게 입력요청");
+    if (birthdayReturn === false) return;
+    //패스워드
+    alert('서버에 전송');
+    let form = document.querySelector("form");
+    form.submit();
+  });
+
+
+  //공동으로 사용되는 함수
+  function validate(inputObj, pattern, message) {
+    if (inputObj.value.match(pattern)) {
+      inputObj.nextElementSibling.innerHTML = "성공";
+      inputObj.nextElementSibling.style.color = "blue";
+      return true;
+    } else {
+      inputObj.nextElementSibling.innerHTML = message;
+      inputObj.nextElementSibling.style.color = "tomato";
+      inputObj.value = "";
+      inputObj.focus();
+      return false;
+    }
+  }
+}
+
+    </script>
 </body>
 
 </html>

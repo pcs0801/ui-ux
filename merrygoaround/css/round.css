@@ -42,7 +42,7 @@ img {
   transform: translate(-50%, 50%);
   color: rgba(255, 255, 255, 0.6);
 }
-#navgateright {
+#navgateright {  
   z-index: 1;
   position: absolute;
   bottom: 50%;
