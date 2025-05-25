@@ -23,13 +23,13 @@
                     <col id="col3">
                 </colgroup>
                 <tr>
-                    <td><input type="radio" name="member" id="member">회원</td>
-                    <td><input type="radio" name="nonMember" id="nonMember">비회원(주문조회)</td>
+                    <td><input type="radio" name="memberType" id="member">회원</td>
+                    <td><input type="radio" name="memberType" id="nonMember">비회원(주문조회)</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="text" name="id" id="id" placeholder="11번가 아이디"><span class="msg"></span></td>
-                    <td rowspan="2" id="loginBtnTd"><a href="#" onclick="window.alert('로그인 버튼 클릭')">로그인</a></td>
+                    <td rowspan="2" id="loginBtnTd"><a href="#" onclick="checkLoginRadio()">로그인</a></td>
 
                 </tr>
                 <tr>
@@ -42,7 +42,7 @@
                 <tr>
                     <div class="buttons">
                         <td colspan="3">
-                            <a href="./memberjoin.html" target="_blank"><button
+                            <a href="./../../23/dev/menu.html" target="_blank"><button
                                     style="margin-top: 10px; width: 120px;">회원가입</button></a>
                             <button style="width: 120px; margin-left: 10px;">아이디 찾기</button>
                             <button style="width: 120px; margin-left: 10px;">비밀번호 찾기</button>

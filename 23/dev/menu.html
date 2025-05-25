@@ -407,7 +407,7 @@
 
                     <div class="gender">
                         <label>성별</label><br>
-                        <select name="gender" class="w-98">
+                        <select name="gender" class="w-98" id="gender">
                             <option value="">성별</option>
                             <option>남</option>
                             <option>여</option>
@@ -431,10 +431,11 @@
                             <option>태국 +66</option>
                             <input type="text" id="phone" name="phone" placeholder="전화번호 입력" class="w-70">
                             <span class="msg"></span>
-                            <button type="button" class="vcBtn">인증번호 받기</button>
+                            <button type="button" class="vcBtn" onclick="alert('인증번호 : 250324')">인증번호 받기</button>
                     </div>
 
                     <input type="number" id="vc" name="vc" placeholder="인증번호를 입력하세요" class="w-98">
+                    <span class="msg"></span>
 
                     <div class="signUp" style="margin-top: 10px;">
                         <button type="submit" class="suBtn" id="submit">가입하기</button>
@@ -451,7 +452,7 @@
 
     <script>
 
-        
+
 
         /* 회전목마 */
         const slideObj = document.querySelectorAll('.slide');
@@ -517,6 +518,11 @@
             let name = document.querySelector("#name");
             let email = document.querySelector("#email");
             let phone = document.querySelector("#phone");
+            let vc = document.querySelector("#vc");
+            let gender = document.querySelector("#gender");
+
+
+
 
             id.addEventListener("blur", () => {
                 validate(id, idPattern, "영문자, 숫자, _만 3~12자 입력 가능.");
@@ -551,6 +557,17 @@
                 }
             });
 
+            vc.addEventListener("blur", () => {
+                const msgSpan = vc.nextElementSibling;
+                if (vc.value === "250324") {
+                    msgSpan.innerHTML = "정상";
+                    msgSpan.style.color = "blue";
+                } else {
+                    msgSpan.innerHTML = "인증번호를 제대로 입력해주세요.";
+                    msgSpan.style.color = "tomato";
+                }
+            });
+
 
             //회원가입전송기능 점검
             submit.addEventListener("click", function () {
@@ -567,10 +584,17 @@
                 if (emailReturn === false) return;
                 let phoneReturn = validate(phone, phonePattern, "값을 정확하게 입력요청");
                 if (phoneReturn === false) return;
-                //패스워드
+
+                if (gender.value === "") {
+                    alert("성별을 선택해주세요.");
+                    gender.focus();
+                    return;
+                }
                 alert('서버에 전송');
                 let form = document.querySelector("form");
                 form.submit();
+
+
             });
 
 
@@ -593,6 +617,7 @@
                     return false;
                 }
             }
+
         }
 
     </script>

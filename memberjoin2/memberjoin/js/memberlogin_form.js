@@ -1,6 +1,4 @@
-//전체 document 메모리 모두 로드가 되었을때 onLoad() 함수 call
 function onLoad() {
-  //id 패턴검색을 진행할 이벤트 정의
   let idPattern = /^[\w]{3,12}$/;
   let pwPattern = /^[\w]{6,8}$/;
 
@@ -15,10 +13,9 @@ function onLoad() {
     validate(pw, pwPattern, "영문자, 숫자, _만 입력 가능. 최소 6자이상 8자이하 입력하세요.");
   });
 
-  //공동으로 사용되는 함수
   function validate(inputObj, pattern, message) {
     if (inputObj.value.match(pattern)) {
-      inputObj.nextElementSibling.innerHTML = "성공";
+      inputObj.nextElementSibling.innerHTML = "정상";
       inputObj.nextElementSibling.style.color = "blue";
       return true;
     } else {
@@ -31,3 +28,12 @@ function onLoad() {
   }
 }
 
+function checkLoginRadio() {
+  let selected = document.querySelector('input[name="memberType"]:checked');
+  if (!selected) {
+    alert("회원 또는 비회원을 선택해주세요.");
+    return;
+  }
+
+  alert("로그인 완료");
+}
